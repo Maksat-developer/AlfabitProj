@@ -15,7 +15,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href=".{% static 'assets/auth-block.6c2e65d8.css' %}"
+      href="{% static 'assets/auth-block.6c2e65d8.css' %}"
     />
     <link
       rel="stylesheet"
@@ -81,7 +81,7 @@
       })(window, document, "script", "dataLayer", "GTM-T9XSB23");
     </script>
     <!-- End Google Tag Manager -->
-    <title>Регистрация | Обменный сервис электронных валют AlfaBit</title>
+    <title>Войти в аккаунт | Обменный сервис электронных валют AlfaBit</title>
     <meta name="description" />
     <meta
       name="norton-safeweb-site-verification"
@@ -113,7 +113,7 @@
               draggable="false"
               data-v-572cf165
           /></a>
-          <h1 class="auth__title" data-v-572cf165>Регистрация в AlfaBit</h1>
+          <h1 class="auth__title" data-v-572cf165>Войти в AlfaBit</h1>
           <!---->
           <form class="auth__form" data-v-572cf165>
             <!--[-->
@@ -149,9 +149,9 @@
               <div class="ui-input__content">
                 <div class="ui-input__wrapper">
                   <!--[--><!--]--><input
-                    id="create-password"
+                    id="password"
                     inputmode="text"
-                    name="create-password"
+                    name="password"
                     class="ui-input__control"
                     type="password"
                     placeholder="Пароль"
@@ -165,58 +165,13 @@
               </div>
               <div class="ui-input__bottom">
                 <div class="ui-input__validation-message"></div>
-                <div class="ui-input__extra"><!--[--><!--]--></div>
-              </div>
-            </div>
-            <div
-              class="ui-input ui-input--primary ui-input--medium ui-input--password auth__form__input"
-              data-v-572cf165
-            >
-              <!---->
-              <div class="ui-input__content">
-                <div class="ui-input__wrapper">
-                  <!--[--><!--]--><input
-                    id="repeat-password"
-                    inputmode="text"
-                    name="repeat-password"
-                    class="ui-input__control"
-                    type="password"
-                    placeholder="Повторите пароль"
-                    autocomplete="off"
-                  /><!--[--><!--]--><!----><!----><!----><!----><!----><!--[--><i
-                    class="ui-input__show-password icon-hide-password"
-                  ></i
-                  ><!--]--><!---->
+                <div class="ui-input__extra">
+                  <!--[--><a href="reset-password.html" data-v-572cf165
+                    ><span class="auth__form__input__extra" data-v-572cf165
+                      >Забыли пароль?</span
+                    ></a
+                  ><!--]-->
                 </div>
-                <!--[--><!--]-->
-              </div>
-              <div class="ui-input__bottom">
-                <div class="ui-input__validation-message"></div>
-                <div class="ui-input__extra"><!--[--><!--]--></div>
-              </div>
-            </div>
-            <div
-              class="ui-input ui-input--primary ui-input--medium ui-input--text auth__form__input"
-              data-v-572cf165
-            >
-              <!---->
-              <div class="ui-input__content">
-                <div class="ui-input__wrapper">
-                  <!--[--><!--]--><input
-                    id="ref-id"
-                    inputmode="text"
-                    name="ref-id"
-                    class="ui-input__control"
-                    type="text"
-                    placeholder="Реферальный ID (необязательно)"
-                    autocomplete="off"
-                  /><!--[--><!--]--><!----><!----><!----><!----><!----><!----><!---->
-                </div>
-                <!--[--><!--]-->
-              </div>
-              <div class="ui-input__bottom">
-                <div class="ui-input__validation-message"></div>
-                <div class="ui-input__extra"><!--[--><!--]--></div>
               </div>
             </div>
             <!--]--><button
@@ -225,18 +180,19 @@
               data-v-572cf165
             >
               <!----><span class="ui-button__content"
-                ><!--[-->Зарегистрироваться<!--]--></span
+                ><!--[-->Войти<!--]--></span
               ><!---->
             </button>
-          </form>
-          <!---->
+          </form method="POST" action="{% url 'login' %}">
           <p class="auth__extra" data-v-572cf165>
-            Уже есть аккаунт?
-            <a href="login.html" data-v-572cf165
-              ><span class="auth__extra__link" data-v-572cf165>Войти</span></a
+            Нет аккаунта?
+            <a href="{% url 'register' %}" data-v-572cf165
+              ><span class="auth__extra__link" data-v-572cf165
+                >Зарегистрироваться</span
+              ></a
             >
           </p>
-          <!---->
+          <!----><!---->
         </div>
         <!--]-->
       </main>
@@ -251,7 +207,7 @@
     ></script>
     <link
       rel="modulepreload"
-      href="{% static 'assets/pages/registration/index.page.a73567c3.js' %}"
+      href="{% static 'assets/pages/login/index.page.14b08ad5.js' %}"
       as="script"
       type="text/javascript"
     />
@@ -360,8 +316,8 @@
     <script id="vite-plugin-ssr_pageContext" type="application/json">
       {
         "pageContext": {
-          "_pageId": "/pages/registration/index",
-          "pageProps": "!undefined",
+          "_pageId": "/pages/login/index",
+          "pageProps": { "token": "!undefined" },
           "redirectTo": "!undefined",
           "routeParams": {},
           "device": { "isMobile": false, "isTablet": false, "isDesktop": true },
@@ -374,7 +330,7 @@
           "refreshToken": "!undefined",
           "domain": "alfabit.org",
           "hostname": "alfabit.org",
-          "urlWithoutLocale": "/registration",
+          "urlWithoutLocale": "/login",
           "translations": {
             "all": "Все",
             "faq": "FAQ",
@@ -863,7 +819,7 @@
     <script>
       (function () {
         var js =
-          "window['__CF$cv$params']={r:'7d58ea37b8a17a7d',m:'diBEfJhS0mbtEQ5VQzvQV1akOVNbXDlx9S88SgHwDHU-1686476660-0-AdbK/xZGwMtoT0QDdjnkzR0q9Qls5YnNaSMVXIF/eaAT'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
+          "window['__CF$cv$params']={r:'7d58e8d0ca331660',m:'iH8J.LeSP73csB1yP9gG9JX4A3Zozi4pdyq1nHhvEJk-1686476603-0-AW32mTOC16YvSbm3E9E2xnaOLOj2K8j0rBgwe1CFj27b'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
         var _0xh = document.createElement("iframe");
         _0xh.height = 1;
         _0xh.width = 1;

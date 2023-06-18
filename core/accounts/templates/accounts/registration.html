@@ -15,7 +15,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'assets/auth-block.6c2e65d8.css' %}"
+      href=".{% static 'assets/auth-block.6c2e65d8.css' %}"
     />
     <link
       rel="stylesheet"
@@ -26,7 +26,7 @@
       rel="stylesheet"
       type="text/css"
       href="{% static 'assets/index.e38cf7fd.css' %}"
-    />{% static '' %}
+    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -81,7 +81,7 @@
       })(window, document, "script", "dataLayer", "GTM-T9XSB23");
     </script>
     <!-- End Google Tag Manager -->
-    <title>Войти в аккаунт | Обменный сервис электронных валют AlfaBit</title>
+    <title>Регистрация | Обменный сервис электронных валют AlfaBit</title>
     <meta name="description" />
     <meta
       name="norton-safeweb-site-verification"
@@ -108,14 +108,15 @@
             data-v-572cf165
             ><img
               class="auth__logo"
-              src="{% static 'icons/logos/alfabit-exchange.svg"
-              alt="logo"' %}
+              src="{% static 'icons/logos/alfabit-exchange.svg' %}"
+              alt="logo"
               draggable="false"
               data-v-572cf165
           /></a>
-          <h1 class="auth__title" data-v-572cf165>Войти в AlfaBit</h1>
+          <h1 class="auth__title" data-v-572cf165>Регистрация в AlfaBit</h1>
           <!---->
-          <form class="auth__form" data-v-572cf165>
+          <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
             <!--[-->
             <div
               class="ui-input ui-input--primary ui-input--medium ui-input--text auth__form__input"
@@ -149,7 +150,7 @@
               <div class="ui-input__content">
                 <div class="ui-input__wrapper">
                   <!--[--><!--]--><input
-                    id="password"
+                    id="create-password"
                     inputmode="text"
                     name="password"
                     class="ui-input__control"
@@ -165,13 +166,29 @@
               </div>
               <div class="ui-input__bottom">
                 <div class="ui-input__validation-message"></div>
-                <div class="ui-input__extra">
-                  <!--[--><a href="reset-password.html" data-v-572cf165
-                    ><span class="auth__form__input__extra" data-v-572cf165
-                      >Забыли пароль?</span
-                    ></a
-                  ><!--]-->
-                </div>
+                <div class="ui-input__extra"><!--[--><!--]--></div>
+              </div>
+            </div>
+            <div
+              class="ui-input ui-input--primary ui-input--medium ui-input--password auth__form__input"
+              data-v-572cf165
+            >
+              <!---->
+           
+              <div class="ui-input__bottom">
+                <div class="ui-input__validation-message"></div>
+                <div class="ui-input__extra"><!--[--><!--]--></div>
+              </div>
+            </div>
+            <div
+              class="ui-input ui-input--primary ui-input--medium ui-input--text auth__form__input"
+              data-v-572cf165
+            >
+              <!---->
+       
+              <div class="ui-input__bottom">
+                <div class="ui-input__validation-message"></div>
+                <div class="ui-input__extra"><!--[--><!--]--></div>
               </div>
             </div>
             <!--]--><button
@@ -180,19 +197,18 @@
               data-v-572cf165
             >
               <!----><span class="ui-button__content"
-                ><!--[-->Войти<!--]--></span
+                ><!--[-->Зарегистрироваться<!--]--></span
               ><!---->
             </button>
           </form>
+          <!---->
           <p class="auth__extra" data-v-572cf165>
-            Нет аккаунта?
-            <a href="registration.html" data-v-572cf165
-              ><span class="auth__extra__link" data-v-572cf165
-                >Зарегистрироваться</span
-              ></a
+            Уже есть аккаунт?
+            <a href="{% url 'login' %}" data-v-572cf165
+              ><span class="auth__extra__link" data-v-572cf165>Войти</span></a
             >
           </p>
-          <!----><!---->
+          <!---->
         </div>
         <!--]-->
       </main>
@@ -207,7 +223,7 @@
     ></script>
     <link
       rel="modulepreload"
-      href="{% static 'assets/pages/login/index.page.14b08ad5.js' %}"
+      href="{% static 'assets/pages/registration/index.page.a73567c3.js' %}"
       as="script"
       type="text/javascript"
     />
@@ -219,7 +235,7 @@
     />
     <link
       rel="modulepreload"
-      href="{% static assets/chunk-b247637b.js' %}"
+      href="{% static 'assets/chunk-b247637b.js' %}"
       as="script"
       type="text/javascript"
     />
@@ -279,7 +295,7 @@
     />
     <link
       rel="modulepreload"
-      href="{% static 'assets/chunk-dd84edba.js"' %}
+      href="{% static 'assets/chunk-dd84edba.js' %}"
       as="script"
       type="text/javascript"
     />
@@ -316,8 +332,8 @@
     <script id="vite-plugin-ssr_pageContext" type="application/json">
       {
         "pageContext": {
-          "_pageId": "/pages/login/index",
-          "pageProps": { "token": "!undefined" },
+          "_pageId": "/pages/registration/index",
+          "pageProps": "!undefined",
           "redirectTo": "!undefined",
           "routeParams": {},
           "device": { "isMobile": false, "isTablet": false, "isDesktop": true },
@@ -330,7 +346,7 @@
           "refreshToken": "!undefined",
           "domain": "alfabit.org",
           "hostname": "alfabit.org",
-          "urlWithoutLocale": "/login",
+          "urlWithoutLocale": "/registration",
           "translations": {
             "all": "Все",
             "faq": "FAQ",
@@ -819,7 +835,7 @@
     <script>
       (function () {
         var js =
-          "window['__CF$cv$params']={r:'7d58e8d0ca331660',m:'iH8J.LeSP73csB1yP9gG9JX4A3Zozi4pdyq1nHhvEJk-1686476603-0-AW32mTOC16YvSbm3E9E2xnaOLOj2K8j0rBgwe1CFj27b'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
+          "window['__CF$cv$params']={r:'7d58ea37b8a17a7d',m:'diBEfJhS0mbtEQ5VQzvQV1akOVNbXDlx9S88SgHwDHU-1686476660-0-AdbK/xZGwMtoT0QDdjnkzR0q9Qls5YnNaSMVXIF/eaAT'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
         var _0xh = document.createElement("iframe");
         _0xh.height = 1;
         _0xh.width = 1;

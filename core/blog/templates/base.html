@@ -430,7 +430,7 @@
                 ><!----></button
               ><!--[--><a
                 class="ui-button ui-button--filled_primary has-icon app-header__login-btn"
-                href="en/login.html"
+                href="{% url 'login' %}"
                 ><span class="ui-button__icon"
                   ><!--[--><i class="icon-sign-in"></i
                   ><!--]--></span
@@ -494,7 +494,7 @@
         </div>
       </header>
 
-      {% block content %} {% endbloc %}
+      {% block content %} {% endblock %}
 
       <footer class="app-footer" data-v-c75ad7f7>
         <div class="container" data-v-c75ad7f7>

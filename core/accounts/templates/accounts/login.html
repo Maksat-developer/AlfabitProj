@@ -104,7 +104,7 @@
         <!--[-->
         <div class="container" data-v-572cf165>
           <!--teleport start--><!--teleport end--><a
-            href="index.html"
+            href="{% url 'index' %}"
             data-v-572cf165
             ><img
               class="auth__logo"
@@ -115,75 +115,35 @@
           /></a>
           <h1 class="auth__title" data-v-572cf165>Войти в AlfaBit</h1>
           <!---->
-          <form class="auth__form" data-v-572cf165>
-            <!--[-->
-            <div
-              class="ui-input ui-input--primary ui-input--medium ui-input--text auth__form__input"
-              data-v-572cf165
-            >
-              <!---->
-              <div class="ui-input__content">
-                <div class="ui-input__wrapper">
-                  <!--[--><!--]--><input
-                    id="email"
-                    inputmode="text"
-                    name="email"
-                    class="ui-input__control"
-                    type="text"
-                    placeholder="E-mail"
-                    autocomplete="off"
-                  /><!--[--><!--]--><!----><!----><!----><!----><!----><!----><!---->
+          <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="ui-input ui-input--primary ui-input--medium ui-input--text auth__form__input">
+                <div class="ui-input__content">
+                    <div class="ui-input__wrapper">
+                        <input id="login-email" name="email" class="ui-input__control" type="email" placeholder="E-mail" autocomplete="off">
+                    </div>
                 </div>
-                <!--[--><!--]-->
-              </div>
-              <div class="ui-input__bottom">
-                <div class="ui-input__validation-message"></div>
-                <div class="ui-input__extra"><!--[--><!--]--></div>
-              </div>
+                <div class="ui-input__bottom">
+                    <div class="ui-input__validation-message"></div>
+                    <div class="ui-input__extra"></div>
+                </div>
             </div>
-            <div
-              class="ui-input ui-input--primary ui-input--medium ui-input--password auth__form__input"
-              data-v-572cf165
-            >
-              <!---->
-              <div class="ui-input__content">
-                <div class="ui-input__wrapper">
-                  <!--[--><!--]--><input
-                    id="password"
-                    inputmode="text"
-                    name="password"
-                    class="ui-input__control"
-                    type="password"
-                    placeholder="Пароль"
-                    autocomplete="off"
-                  /><!--[--><!--]--><!----><!----><!----><!----><!----><!--[--><i
-                    class="ui-input__show-password icon-hide-password"
-                  ></i
-                  ><!--]--><!---->
+            <div class="ui-input ui-input--primary ui-input--medium ui-input--password auth__form__input">
+                <div class="ui-input__content">
+                    <div class="ui-input__wrapper">
+                        <input id="login-password" name="password" class="ui-input__control" type="password" placeholder="Пароль" autocomplete="off">
+                    </div>
                 </div>
-                <!--[--><!--]-->
-              </div>
-              <div class="ui-input__bottom">
-                <div class="ui-input__validation-message"></div>
-                <div class="ui-input__extra">
-                  <!--[--><a href="reset-password.html" data-v-572cf165
-                    ><span class="auth__form__input__extra" data-v-572cf165
-                      >Забыли пароль?</span
-                    ></a
-                  ><!--]-->
+                <div class="ui-input__bottom">
+                    <div class="ui-input__validation-message"></div>
+                    <div class="ui-input__extra"></div>
                 </div>
-              </div>
             </div>
-            <!--]--><button
-              class="ui-button ui-button--filled_primary auth__form__btn"
-              type="button"
-              data-v-572cf165
-            >
-              <!----><span class="ui-button__content"
-                ><!--[-->Войти<!--]--></span
-              ><!---->
+            <button class="ui-button ui-button--filled_primary auth__form__btn" type="submit">
+                <span class="ui-button__content">Войти</span>
             </button>
-          </form method="POST" action="{% url 'login' %}">
+        </form>
+        
           <p class="auth__extra" data-v-572cf165>
             Нет аккаунта?
             <a href="{% url 'register' %}" data-v-572cf165
